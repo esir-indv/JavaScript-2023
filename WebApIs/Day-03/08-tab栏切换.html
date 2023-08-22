@@ -51,8 +51,8 @@
     }
 
     .tab-nav ul li a.active {
-      border-color: #e1251b;
-      color: #e1251b;
+      border-color: #1b43e1;
+      color: #e11b50;
     }
 
     .tab-content {
@@ -100,8 +100,10 @@
       // console.log(e.target)  // e.target是我们点击的对象
       // 我们只有点击了 a 才会 进行 添加类和删除类操作 
       // console.log(e.target.tagName)  // e.target.tagName 点击那个对象的 标签名
+      console.dir('我点击的是：'+ e.target) // 就是我们点击的那个对象
+
       if (e.target.tagName === 'A') {
-        // console.log('我选的是a')
+        console.log('我选的是a')
         // 排他思想 ，先移除原来的active  
         document.querySelector('.tab-nav .active').classList.remove('active')
         //当前元素添加 active  是 e.target
@@ -110,6 +112,7 @@
 
         // 下面大盒子模块
         // console.log(e.target.dataset.id)
+        //添加+表示转换为数字类型
         const i = +e.target.dataset.id
         // 排他思想 ，先移除原来的active 
         document.querySelector('.tab-content .active').classList.remove('active')

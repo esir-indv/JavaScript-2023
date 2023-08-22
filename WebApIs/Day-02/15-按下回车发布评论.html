@@ -139,13 +139,14 @@
     // 4. 按下回车发布评论
     tx.addEventListener('keyup', function (e) {
       // 只有按下的是回车键，才会触发
-      // console.log(e.key)
+       console.log(e.key)
       if (e.key === 'Enter') {
         // 如果用户输入的不为空就显示和打印
-        if (tx.value.trim()) {
-          // console.log(11)
+        if (tx.value.trim() !== '') {
+          console.log(11)
           item.style.display = 'block'
-          // console.log(tx.value)  // 用户输入的内容
+          console.log(item.style.display)
+          console.log(tx.value)  // 用户输入的内容
           text.innerHTML = tx.value
 
         }

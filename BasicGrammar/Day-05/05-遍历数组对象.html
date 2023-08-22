@@ -22,6 +22,13 @@
       console.log(students[i].name)
       console.log(students[i].hometown)
     }
+    console.log('==>')
+    for (let i = 0; i < students.length ; i++) {
+      for (let studentsKey in students[i]) {
+        console.log(students[i][studentsKey])
+      }
+    }
+
   </script>
 </body>
 

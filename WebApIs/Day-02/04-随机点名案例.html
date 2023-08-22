@@ -17,24 +17,20 @@
 
         .box {
             width: 600px;
-            margin: 50px auto;
+            margin: 200px auto;
             display: flex;
             font-size: 25px;
             line-height: 40px;
         }
-
         .qs {
 
             width: 450px;
             height: 40px;
-            color: red;
-
+            color: rosybrown;
         }
-
         .btns {
             text-align: center;
         }
-
         .btns button {
             width: 120px;
             height: 35px;
@@ -67,12 +63,13 @@
         const start = document.querySelector('.start')
         // 1.2 添加点击事件
         start.addEventListener('click', function () {
-            timerId = setInterval(function () {
+          start.disabled = true
+          timerId = setInterval(function () {
                 // 随机数
                 random = parseInt(Math.random() * arr.length)
                 // console.log(arr[random])
                 qs.innerHTML = arr[random]
-            }, 35)
+            }, 100)
             // 如果数组里面只有一个值了，还需要抽取吗？  不需要  让两个按钮禁用就可以
             if (arr.length === 1) {
                 // start.disabled = true
@@ -84,7 +81,8 @@
         // 2. 关闭按钮模块
         const end = document.querySelector('.end')
         end.addEventListener('click', function () {
-            clearInterval(timerId)
+          start.disabled = false
+          clearInterval(timerId)
             // 结束了，可以删除掉当前抽取的那个数组元素
             arr.splice(random, 1)
             console.log(arr)
