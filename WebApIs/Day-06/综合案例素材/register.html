@@ -209,13 +209,13 @@
         if (flag) {
           // 取反了，不能马上第二次点击
           flag = false
-          let i = 5
+          let i = 50
           // 点击完毕之后立马触发
-          code.innerHTML = `0${i}秒后重新获取`
+          code.innerHTML = `${i}秒后重新获取`
           // 开启定时器
           let timerId = setInterval(function () {
             i--
-            code.innerHTML = `0${i}秒后重新获取`
+            code.innerHTML = `${i}秒后重新获取`
             if (i === 0) {
               // 清除定时器
               clearInterval(timerId)
@@ -233,7 +233,7 @@
     // 2. 验证的是用户名
     // 2.1 获取用户名表单
     const username = document.querySelector('[name=username]')
-    // 2.2 使用change事件  值发生变化的时候
+    // 2.2 使用change change change 事件  值发生变化的时候,一直在检测
     username.addEventListener('change', verifyName)
     // 2.3 封装verifyName函数
     function verifyName() {
@@ -249,10 +249,7 @@
       // 2.5 合法的 就清空span
       span.innerText = ''
       return true
-    }
-
-
-
+    }253910
     // 3. 验证的是手机号
     // 2.1 获取手机表单
     const phone = document.querySelector('[name=phone]')
